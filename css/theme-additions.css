@@ -1,0 +1,384 @@
+/* Declare Tufte Serif Fonts */
+
+@font-face {
+  font-family: "et-book";
+  src: url("../fonts/et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot");
+  src: url("../fonts/et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot?#iefix") format("embedded-opentype"), url("../fonts/et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff") format("woff"), url("../fonts/et-book/et-book-roman-line-figures/et-book-roman-line-figures.ttf") format("truetype"), url("../fonts/et-book/et-book-roman-line-figures/et-book-roman-line-figures.svg#etbookromanosf") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "et-book";
+  src: url("../fonts/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot");
+  src: url("../fonts/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot?#iefix") format("embedded-opentype"), url("../fonts/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.woff") format("woff"), url("../fonts/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.ttf") format("truetype"), url("../fonts/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.svg#etbookromanosf") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "et-book";
+  src: url("../fonts/et-book/et-book-bold-line-figures/et-book-bold-line-figures.eot");
+  src: url("../fonts/et-book/et-book-bold-line-figures/et-book-bold-line-figures.eot?#iefix") format("embedded-opentype"), url("../fonts/et-book/et-book-bold-line-figures/et-book-bold-line-figures.woff") format("woff"), url("../fonts/et-book/et-book-bold-line-figures/et-book-bold-line-figures.ttf") format("truetype"), url("../fonts/et-book/et-book-bold-line-figures/et-book-bold-line-figures.svg#etbookromanosf") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "et-book-roman-old-style";
+  src: url("../fonts/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot");
+  src: url("../fonts/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot?#iefix") format("embedded-opentype"), url("../fonts/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.woff") format("woff"), url("../fonts/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.ttf") format("truetype"), url("../fonts/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.svg#etbookromanosf") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* Variable overrides */
+:root {
+
+  /* Use serif fonts */
+  --font-family-prose: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  --font-family-heading: var(--font-family-prose);
+  --font-family-code: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  --side-note-number-font-family: et-book-roman-old-style, Palatino, Georgia, serif;
+
+  /* Make some fonts a tad larger */
+  --font-size: 19px; /* 90% of 19px */
+  --line-height: 29px; /* 90% of 29px */
+  font-size: var(--font-size);
+  
+  --nav-toc-font-size: 15.3px; /* 90% of 17px */
+  --nav-toc-code-font-size: 13.5px; /* 90% of 15px */
+  
+  --side-note-line-height: 20.7px; /* 90% of 23px */
+  --side-note-font-size: 15.3px; /* 90% of 17px */
+  --side-note-code-font-size: 13.5px; /* 90% of 15px */
+
+  --figcaption-line-height: 20.7px; /* 90% of 23px */
+  --figcaption-font-size: 15.3px; /* 90% of 17px */
+  --figcaption-code-font-size: 13.5px; /* 90% of 15px */
+  --figcaption-gap: 8.1px; /* 90% of 9px */
+  --captioned-figure-gap: 11.7px; /* 90% of 13px */
+
+  --title-font-size: 45px; /* 90% of 50px */
+  --title-line-height: 49.5px; /* 90% of 55px */
+  --h1-font-size: 30px; /* 80% of 38px */
+  --h1-line-height: 33.6px; /* 80% of 42px */
+  --h1-margin-top: 33.6px; /* 80% of 42px */
+  --h1-margin-bottom: 11.2px; /* 80% of 14px */
+  --h2-font-size: 30px; /* 80% of 38px */
+  --h2-line-height: 33.6px; /* 80% of 42px */
+  --h2-margin-top: 33.6px; /* 80% of 42px */
+  --h2-margin-bottom: 11.2px; /* 80% of 14px */
+  --h3-margin-top: 0.45em; /* Adjusted proportionally */
+
+  --background-color: white; /* hsl(36, 5%, 96%); */
+  --color-text: hsl(210, 31%, 5%);
+  --color-text-secondary: hsl(211, 14%, 25%);
+  --color-sidenote: var(--color-text-secondary);
+  /* color: #436ed0; */
+  /* color: hsl(25, 78%, 53%); */
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Make dark mode a tad more contrasty, but keep off-white */
+    --background-color: black;
+    --color-text: hsl(36, 24%, 95%);
+    --color-text-secondary: hsl(35, 12%, 75%);
+
+  }
+}
+
+/* Text */
+
+sup {
+    font-size: 65%; /* Adjusts the font size to be 75% of the current font size */
+    /*vertical-align: super;*/
+}
+
+code {
+  padding: .125em .125em .0625em;
+  border-radius: .125em;
+}
+
+h1.title + p {
+  /* font-weight: bold; */
+  font-size: 1.15em;
+}
+
+h1:not(.title) {
+  /* use padding instead of margin so targeting a heading gives it some space at top of window */
+  margin-top: 0;
+  padding-top: var(--h1-margin-top);
+  padding-bottom: .25em;
+  /*  */
+  border-bottom: 1px solid var(--color-border-heavy);
+}
+
+h2 {
+  font-style: italic;
+}
+
+h2 {
+  margin-top: 0;
+  padding-top: var(--h2-margin-top);
+}
+
+h3 {
+  margin-top: 0;
+  padding-top: var(--h3-margin-top);
+}
+
+/* Figures */
+
+/* .wide is the class on the outermost div wrapper for figures */
+.wide {
+  position: relative;
+  z-index: 10;
+
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 1rem 1rem var(--background-color);
+}
+
+.wide img {
+  /* ensure transparent PNG have a solid background for now*/
+  background-color: var(--background-color);
+}
+
+figure.centered {
+  text-align: center;
+}
+
+.half-wide {
+  /* Kat seems to like using text-alignment for figures, and why not? */
+  /* TODOconsider setting all images as inline-block elements? */
+  display: inline-block;
+  width: 49%;
+}
+
+.wide.extra-wide.two-column,
+.wide.extra-wide.two-column .half-wide figcaption {
+  text-align: center;
+}
+
+figcaption {
+  /* font-weight: bold; */
+}
+
+/* figcaptions are center-aligned, which screws with sidenote formatting */
+figcaption .sidenote {
+  text-align: left;
+  font-style: normal;
+  font-size: var(--side-note-font-size);
+}
+
+figcaption .sidenote-number:after {
+  font-weight: inherit;
+}
+
+@media screen and (min-width: calc(745px + 2 *(52px + 206px + 52px) - 1px)) {
+  .wide.extra-wide.two-column .half-wide figcaption {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+}
+
+/* Metadata */
+
+.metadata {
+  display: flex;
+  flex-flow: row;
+  gap: 3em;
+}
+
+.metadata>* {
+  /*flex-basis: 100%; */
+  display: flex;
+  flex-flow: column;
+  gap: .25em;
+}
+
+.metadata .label {
+  font-size: .67em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+
+.metadata > :first-child {
+  flex-basis: 120%; /* Adjust this value as needed for the first column */
+}
+
+.subtitle {
+  font-style: italic;
+}
+
+
+/* Table of Contents */
+
+#toc-heading {
+  width: 100%;
+  display: flex;
+  gap: .5em;
+  align-items: center;
+  /* font-style: italic; */
+  /* border-bottom: 1px solid var(--color-border); */
+  margin-bottom: .5em;
+}
+
+nav#TOC>ul {
+  margin-left: 0;
+  position: relative;
+  z-index: 0;
+}
+
+nav#TOC a:target {
+  color: var(--color-text);
+}
+
+/* Collapsed styles */
+@media screen and (max-width: calc(745px + 2 *(52px + 206px + 52px) - 2px)) {
+
+  #toc-heading {
+    margin-bottom: 0;
+  }
+
+  nav#TOC>ul {
+    display: none;
+  }
+
+  nav#TOC>input:checked~ul {
+    display: block;
+  }
+
+  nav#TOC #toc-chevron {
+    transition: transform .1s;
+  }
+
+  nav#TOC>input:checked~label #toc-chevron {
+    transform: rotate(180deg);
+  }
+
+  nav#TOC {
+    z-index: 1000;
+    position: fixed;
+    margin: 0;
+    padding: .5rem var(--line-height);
+    top: 0;
+    transition: .1s top;
+    max-width: unset;
+    width: 100%;
+    background-color: var(--background-color);
+    border-left: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  nav#TOC.scrolled-down {
+    top: -50px;
+  }
+
+  nav#TOC.scrolled-up {
+    top: 0;
+  }
+
+  nav#TOC label {
+    /* height: 32px; */
+    display: flex;
+    align-items: center;
+    color: var(--color-text-secondary);
+  }
+
+  /* styles from theme.css which are usually only applied on wider viewports */
+
+  nav#TOC ul {
+    margin: 0 .75em
+  }
+
+  nav#TOC > ul {
+    margin: 1em 0;
+  }
+
+  nav#TOC li {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  nav#TOC code {
+    font-size: var(--nav-toc-code-font-size);
+  }
+
+  nav#TOC code,
+  nav#TOC a,
+  nav#TOD a:link,
+  nav#TOD a:visited {
+    color: var(--color-text-secondary);
+  }
+
+  nav#TOC a:hover,
+  nav#TOC a:hover code {
+    text-decoration: none;
+    color: var(--color-link);
+  }
+
+}
+
+/* Active TOC */
+
+nav#TOC a.active {
+  color: var(--color-text);
+}
+
+nav#TOC a.active::after {
+  content: "☜";
+  position: relative;
+  top: .125em;
+  margin-left: .5em;
+}
+
+
+/* Copyable heading ids */
+
+main h1<sup>id]:hover,
+main h2<sup>id]:hover,
+main h3<sup>id]:hover,
+main h4<sup>id]:hover,
+main h5<sup>id]:hover,
+main h6<sup>id]:hover {
+  position: relative;
+  cursor: pointer;
+}
+
+main h1<sup>id]:hover::before,
+main h2<sup>id]:hover::before,
+main h3<sup>id]:hover::before,
+main h4<sup>id]:hover::before,
+main h5<sup>id]:hover::before,
+main h6<sup>id]:hover::before {
+  content: '📎';
+  font-size: .75rem;
+  position: absolute;
+  left: -1.25rem;
+}
+
+main h1<sup>id].copy-success:hover::before,
+main h2<sup>id].copy-success:hover::before,
+main h3<sup>id].copy-success:hover::before,
+main h4<sup>id].copy-success:hover::before,
+main h5<sup>id].copy-success:hover::before,
+main h6<sup>id].copy-success:hover::before {
+  content: '✅';
+}
+
+main h1<sup>id].copy-error:hover::before,
+main h2<sup>id].copy-error:hover::before,
+main h3<sup>id].copy-error:hover::before,
+main h4<sup>id].copy-error:hover::before,
+main h5<sup>id].copy-error:hover::before,
+main h6<sup>id].copy-error:hover::before {
+  content: '❌';
+}
